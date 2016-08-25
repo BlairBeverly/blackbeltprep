@@ -3,6 +3,32 @@
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
+    <div id="toolbar" style="height:50px; margin-bottom:100px">
+        <div style="width:600px; display:inline-block; vertical-align:center;">
+            <h2 style="display:inline;">Welcome, X</h2>
+        </div>
+        <dir style="display:inline-block; vertical-align:center">
+            <a href="">Add Book and Review</a> | 
+            <a href="">Logout</a>
+        </dir>    
+
+    </div>
+    
+
+    <div id="reviews" style="display:inline-block; vertical-align:top; width:300px; height:700px;">
+        <h2>Recent Book Reviews</h2>
+        <a href="">Book Title</a>
+        <p>Rating: XXXX</p>
+        <p>Username: User description</p>
+        <p>Posted on --date--</p>
+    </div>
+
+    <div id="otherbooks" style="display:inline-block; vertical-align:top; width:300px; height:700px; margin-left:50px">
+        <h2> Other Books with Reviews:</h2>
+        <div id="booklist">
+            <a href="">Book Title</a>
+        </div>
+
+    </div>
   </body>
 </html>
