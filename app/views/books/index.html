@@ -5,11 +5,11 @@
   <body>
     <div id="toolbar" style="height:50px; margin-bottom:100px">
         <div style="width:600px; display:inline-block; vertical-align:center;">
-            <h2 style="display:inline;">Welcome, X</h2>
+            <h2 style="display:inline;">Welcome, {{ session['name'] }} </h2>
         </div>
         <dir style="display:inline-block; vertical-align:center">
-            <a href="">Add Book and Review</a> | 
-            <a href="">Logout</a>
+            <a href="/books/add">Add Book and Review</a> | 
+            <a href="/">Logout</a>
         </dir>    
 
     </div>
@@ -17,16 +17,21 @@
 
     <div id="reviews" style="display:inline-block; vertical-align:top; width:300px; height:700px;">
         <h2>Recent Book Reviews</h2>
-        <a href="">Book Title</a>
-        <p>Rating: XXXX</p>
-        <p>Username: User description</p>
-        <p>Posted on --date--</p>
+        {% for review in reviews %} 
+            {{ book }}
+            <a href="/books/{{ review['book_id'] }}">{{ review['title'] }}</a>
+            <p>Rating: {{ review['rating'] }}</p>
+            <p>{{ review['username'] }} says: {{ review['content'] }}</p>
+            <p>Posted on {{ review['added_on'] }}</p><br><br>
+        {% endfor %}
     </div>
 
-    <div id="otherbooks" style="display:inline-block; vertical-align:top; width:300px; height:700px; margin-left:50px">
+    <div id="otherbooks" style="display:inline-block; vertical-align:top; width:300px; height:400px; overflow:scroll; margin-left:50px">
         <h2> Other Books with Reviews:</h2>
         <div id="booklist">
-            <a href="">Book Title</a>
+            {% for book in all_books_with_reviews %}
+                <a href="/books/{{  book['id']  }}">{{ book['title'] }}</a><br>
+            {% endfor %}
         </div>
 
     </div>

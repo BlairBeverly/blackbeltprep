@@ -5,21 +5,22 @@
 </head>
 <body>
     <div style="float:right">
-        <a href="">Home</a> | 
+        <a href="/books">Home</a> | 
         <a href="">Logout</a>
     </div>
 
     <h2>Add a New Book Title and Review:</h2>
 
-    <form action="" method="post">
+    <form action="/books/add_book_and_review" method="post">
     Book Title: <input type="text" name="title"><br>
-    Author:<br>
-    Choose from the list:<select>
+    Author:
+    Choose from the list:<select name="existing_author">
+                            <option></option>
                             <option>Some option</option>
                         </select><br>
-    Or add a new author:<input type="text" name="author"><br>
-    Review:<textarea cols="30" rows="4"></textarea><br>
-    Rating:<select>
+    Or add a new author:<input type="text" name="new_author"><br>
+    Review:<textarea name='content' cols="30" rows="4"></textarea><br>
+    Rating:<select name='rating'>
                 <option value="5">5 stars</option>
                 <option value="4">4 stars</option>
                 <option value="3">3 stars</option>
